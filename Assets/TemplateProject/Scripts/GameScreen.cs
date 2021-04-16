@@ -1,25 +1,25 @@
 ﻿using System.Collections;
 using System.Collections.Generic;
 using Template.Base;
+using Template.Core;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-public class GameScreen : MonoBehaviour
+namespace Template
 {
-    // Start is called before the first frame update
-    void Start()
+    public class GameScreen : BaseScreen
     {
-        GameInfo.Instance.Scores = 10;
-    }
 
-    // Update is called once per frame
-    void Update()
-    {
-        
-    }
+        public override void Show()
+        {
+            base.Show();
 
-    public void OnMenuPressed()
-    {
-        SceneManager.LoadScene("Menu");
+            GameInfo.Instance.Scores = 10;
+        }
+
+        public void OnMenuPressed()
+        {
+            SceneManager.LoadScene("Menu");
+        }
     }
 }

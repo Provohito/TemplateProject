@@ -4,24 +4,29 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using TMPro;
 using Template.Base;
+using Template.Core;
 
-public class MenuScreen : MonoBehaviour
+namespace Template
 {
-    [SerializeField]
-    TextMeshProUGUI scoresText;
-
-    void Start()
+    public class MenuScreen : BaseScreen
     {
-        scoresText.text = GameInfo.Instance.Scores.ToString();
-    }
+        [SerializeField]
+        TextMeshProUGUI scoresText;
 
-    void Update()
-    {
-        
-    }
+       
 
-    public void OnGamePressed()
-    {
-        SceneManager.LoadScene("Game");
+        public override void Show()
+        {
+            base.Show();
+
+            scoresText.text = GameInfo.Instance.Scores.ToString();
+        }
+
+
+
+        public void OnGamePressed()
+        {
+            SceneManager.LoadScene("Game");
+        }
     }
 }
