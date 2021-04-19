@@ -9,7 +9,10 @@ namespace Template
 {
     public class GameScreen : BaseScreen
     {
-
+        [SerializeField]
+        BaseScreen settingsScreen;
+        [SerializeField]
+        BaseScreen resultScreen;
         public override void Show()
         {
             base.Show();
@@ -17,9 +20,14 @@ namespace Template
             GameInfo.Instance.Scores = 10;
         }
 
-        public void OnMenuPressed()
+        public void OnSettingPressed()
         {
-            SceneManager.LoadScene("Menu");
+            NextScreen(settingsScreen);
+        }
+
+        public void OnEndGamePressed()
+        {
+            NextScreen(resultScreen);
         }
     }
 }

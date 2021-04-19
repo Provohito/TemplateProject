@@ -7,14 +7,11 @@ namespace Template
 {
     public class SettingsScreen : BaseScreen
     {
-        void Start()
+        [SerializeField]
+        BaseScreen backScreen;
+        public void OnBackPressed()
         {
-
-        }
-
-        void Update()
-        {
-
+            NextScreen(backScreen);
         }
     }
 }

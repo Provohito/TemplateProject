@@ -17,5 +17,11 @@ namespace Template.Core
             Debug.Log(name + ": Hide");
             gameObject.SetActive(false);
         }
+
+        protected void NextScreen(BaseScreen _screen)
+        {
+            Hide();
+            _screen.Show();
+        }
     }
 }

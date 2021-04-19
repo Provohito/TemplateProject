@@ -12,8 +12,8 @@ namespace Template
     {
         [SerializeField]
         TextMeshProUGUI scoresText;
-
-       
+        [SerializeField]
+        BaseScreen settingsScreen;
 
         public override void Show()
         {
@@ -22,11 +22,16 @@ namespace Template
             scoresText.text = GameInfo.Instance.Scores.ToString();
         }
 
+        public void OnSettingPressed()
+        {
+            NextScreen(settingsScreen);
+        }
 
 
         public void OnGamePressed()
         {
-            SceneManager.LoadScene("Game");
+            SceneManager.LoadScene(Scenesids.Game);
         }
+        
     }
 }
