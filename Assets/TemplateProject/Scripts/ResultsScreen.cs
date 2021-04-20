@@ -10,8 +10,8 @@ namespace Template
 {
     public class ResultsScreen : BaseScreen
     {
-        [SerializeField]
-        BaseScreen gameScreen;
+        public const string Exit_Menu = "Exit_Menu";
+        public const string Exit_Replay = "Exit_Replay";
 
         [SerializeField]
         TextMeshProUGUI scoresText;
@@ -24,12 +24,12 @@ namespace Template
 
         public void OnRestartPressed()
         {
-            NextScreen(gameScreen);
+            Exit(Exit_Replay);
         }
 
         public void OnMenuPressed()
         {
-            SceneManager.LoadScene(Scenesids.Menu);
+            Exit(Exit_Menu);
         }
     }
 }

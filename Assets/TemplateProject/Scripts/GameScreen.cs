@@ -9,10 +9,9 @@ namespace Template
 {
     public class GameScreen : BaseScreen
     {
-        [SerializeField]
-        BaseScreen settingsScreen;
-        [SerializeField]
-        BaseScreen resultScreen;
+        public const string Exit_Settings = "Exit_Settings";
+        public const string Exit_Result = "Exit_Result";
+
         public override void Show()
         {
             base.Show();
@@ -22,12 +21,12 @@ namespace Template
 
         public void OnSettingPressed()
         {
-            NextScreen(settingsScreen);
+            Exit(Exit_Settings);
         }
 
         public void OnEndGamePressed()
         {
-            NextScreen(resultScreen);
+            Exit(Exit_Result);
         }
     }
 }

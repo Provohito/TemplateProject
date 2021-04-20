@@ -10,10 +10,12 @@ namespace Template
 {
     public class MenuScreen : BaseScreen
     {
+        public const string Exit_Settings = "Exit_Settings";
+        public const string Exit_Game = "Exit_Game";
+
+
         [SerializeField]
         TextMeshProUGUI scoresText;
-        [SerializeField]
-        BaseScreen settingsScreen;
 
         public override void Show()
         {
@@ -24,13 +26,13 @@ namespace Template
 
         public void OnSettingPressed()
         {
-            NextScreen(settingsScreen);
+            Exit(Exit_Settings);
         }
 
 
         public void OnGamePressed()
         {
-            SceneManager.LoadScene(Scenesids.Game);
+            Exit(Exit_Game);
         }
         
     }

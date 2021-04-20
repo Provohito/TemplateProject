@@ -7,11 +7,11 @@ namespace Template
 {
     public class SettingsScreen : BaseScreen
     {
-        [SerializeField]
-        BaseScreen backScreen;
+        public const string Exit_Back = "Exit_Back";
+
         public void OnBackPressed()
         {
-            NextScreen(backScreen);
+            Exit(Exit_Back);
         }
     }
 }
